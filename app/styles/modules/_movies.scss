@@ -1,0 +1,110 @@
+.movie-rating {
+	position: relative;
+	color: #42647F;
+	height: 60px;
+	width: 60px;
+	text-align: center;
+
+	& .material-icons {
+		font-size: 60px;
+		opacity: 0.6;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	& span {
+		position: relative;
+		color: #ffffff;
+		font-size: 10px;
+		line-height: 60px;
+	}
+}
+
+.movie-list {
+	display: flex;
+	flex-flow: row wrap;
+}
+
+.movie-item {
+	position: relative;
+	display: inline-flex;
+	width: 100%;
+
+	@include media(">tablet") {
+		width: 25%;
+	}
+
+	& img {
+		width: 100%;
+		height: 100%;
+	}
+
+	&__release {
+		position: absolute;
+		bottom: 0;
+	}
+
+	& .movie-rating {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}
+
+.movie-detail {
+	&__title {
+		@include ellipsis;
+		height: 40px;
+		text-align: center;
+		padding: 0 40px 0 40px;
+		line-height: 40px
+	}
+
+	&__trailer {
+		@include aspect-ratio(16, 9);
+	}
+
+	&__tagline {
+		font-style: italic;
+	}
+
+	&__genres > * {
+		display: inline-block;
+		background-color: #5a5a5a;
+		color: #ffffff;
+		padding: 3px;
+    	border-radius: 3px;
+    	font-size: 10px;
+	}
+
+	&__overview {
+		padding: 10px;
+		text-align: justify;
+
+		&-head {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 10px;
+		}
+	}
+}
+
+.movie-credits {
+	padding: 10px;
+
+	&__item {
+		display: flex;
+		background-color: #f1f1f1;
+    	margin: 5px 0;
+    	padding: 5px;
+    	align-items: center;
+
+    	&-text {
+    		padding: 10px;
+    	}
+	}
+
+
+}

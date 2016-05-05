@@ -1,0 +1,16 @@
+.navigation {
+	text-align: center;
+
+	& li {
+		padding: 5px;
+
+		& a {
+			color: #ffffff;
+			font-weight: bolder;
+			font-size: 32px;
+			text-decoration: none;
+		}
+
+	}
+
+}

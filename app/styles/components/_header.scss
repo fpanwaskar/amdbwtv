@@ -1,0 +1,80 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(90, 90, 90, 0.4);
+	@include flexbox();
+	justify-content: space-between;
+	width: 100%;
+	height: 30px;
+	padding-top: 10px;
+	color: #fff;
+	z-index: 20;
+
+	&__search-btn {
+		visibility: hidden;
+		margin-right: 10px;
+	}
+
+	&__menu-btn {
+		margin-left: 10px;
+	}
+
+	&__title {
+	}
+
+	&--transparent {
+		background-color: rgba(90, 90, 90, 0);
+	}
+}
+
+.header__menu-btn {
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	padding: 4px;
+	height: 14px;
+	transform: rotate(0deg);
+	transition: .5s ease-in-out;
+	cursor: pointer;
+
+	& span {
+		height: 2px;
+		width: 17px;
+		background-color: #ffffff;
+		opacity: 1;
+		transform: rotate(0deg);
+		transition: .25s ease-in-out;
+		transform-origin: left center;
+	}
+
+	&--close {
+		& span:nth-child(1) {
+			transform: rotate(45deg);
+		}
+
+		& span:nth-child(2) {
+			width: 0%;
+			opacity: 0;
+		}
+
+		& span:nth-child(3) {
+			transform: rotate(-45deg);
+		}
+	}
+
+	&--back {
+		& span:nth-child(1) {
+			transform: rotate(-25deg) translateY(7px);
+		}
+
+		& span:nth-child(2) {
+			width: 0%;
+			opacity: 0;
+		}
+
+		& span:nth-child(3) {
+			transform: rotate(25deg) translateY(-7px);
+		}
+	}
+}
