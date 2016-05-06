@@ -1,0 +1,11 @@
+general:
+  branches:
+    only:
+      - master # list of branches to build
+machine:
+  node:
+    version: 4.4.4
+checkout:
+  post:
+    - npm install
+    - npm install gulp -g
