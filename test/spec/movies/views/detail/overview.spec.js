@@ -1,4 +1,4 @@
-import {Model, Collection} from 'Backbone';
+import {Model, Collection} from 'backbone';
 
 import MovieDetail from 'movies/views/detail/overview';
 import MovieModel from 'movies/models/movie';
