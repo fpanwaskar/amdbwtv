@@ -30,7 +30,10 @@ module.exports = function(config) {
     browserify: {
       debug: true,
       paths: ['./app/scripts', './app/settings/base', './app/settings/local', './test/spec'],
-      transform: ['babelify', 'hbsfy'],
+      transform: [
+			['babelify', {"presets": ["es2015"]}],
+          	'hbsfy'
+        ],
       extensions: ['.js', '.hbs']
     },
 

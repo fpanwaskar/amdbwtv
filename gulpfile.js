@@ -23,7 +23,10 @@ gulp.task('browserify', function () {
 		entries: 'app/scripts/app.js',
 		debug: true,
 		// defining transforms here will avoid crashing your stream
-		transform: [babelify, hbsfy]
+		transform: [
+			[babelify, {"presets": ["es2015"]}],
+          	hbsfy
+        ]
     });
 
   bundler = watchify(bundler);
@@ -50,11 +53,12 @@ gulp.task('browserify', function () {
 gulp.task('browserify:dist', function () {
   // set up the browserify instance on a task basis
   var bundler = browserify({
-  	paths: ['./app/scripts', './app/settings/base', './app/settings/prod'],
-  	entries: 'app/scripts/app.js',
-    // defining transforms here will avoid crashing your stream
-    // .transform(babelify, {presets: ["stage-0", "react"]})
-    transform: [babelify, hbsfy]
+	  	paths: ['./app/scripts', './app/settings/base', './app/settings/prod'],
+	  	entries: 'app/scripts/app.js',
+	    transform: [
+			[babelify, {"presets": ["es2015"]}],
+	      	hbsfy
+	    ]
     });
 
   return bundler.bundle()
